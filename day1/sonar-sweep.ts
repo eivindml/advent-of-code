@@ -1,11 +1,12 @@
 import { parseNumber, readFile, add } from '../utils'
 
 const input = readFile('day1/input')
-const initalCount = 0
 const newLines = /\r?\n/
 const countIncreases = (count: number, current: number, index: number, array: Array<number>) => count + (current > array[index - 1] ? 1 : 0)
 
 /* Part one: Count increases */
+
+const initalCount = 0
 
 export const partOne = (input: string) => input
 	.split(newLines)
