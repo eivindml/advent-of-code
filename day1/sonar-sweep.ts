@@ -33,3 +33,4 @@ export const partTwo = (input: string) => input
 
 console.log('🎅 Day 1 (b): ', partTwo(input))
 
+
