@@ -9,26 +9,26 @@ const countIncreases = (count: number, current: number, index: number, array: Ar
 const initalCount = 0
 
 export const partOne = (input: string) => input
-	.split(newLines)
-	.map(parseNumber)
-	.reduce(countIncreases, initalCount)
+  .split(newLines)
+  .map(parseNumber)
+  .reduce(countIncreases, initalCount)
 
 console.log('🎅 Day 1 (a): ', partOne(input))
 
 /* Part two: Sliding window increases */
 
 const nMeasurementSlidingWindow = (n: number) => (result: Array<number>, _: number, index: number, numbers: Array<number>) => {
-	if (index + n > numbers.length) return result
-	const sumNSlidingWindow = numbers.slice(index, index + n).reduce(add)
-	return [...result, sumNSlidingWindow]
+  if (index + n > numbers.length) return result
+  const sumNSlidingWindow = numbers.slice(index, index + n).reduce(add)
+  return [...result, sumNSlidingWindow]
 }
 
 const threeMeasurementSlidingWindow = nMeasurementSlidingWindow(3)
 
 export const partTwo = (input: string) => input
-	.split(newLines)
-	.map(parseNumber)
-	.reduce(threeMeasurementSlidingWindow, [])
-	.reduce(countIncreases, initalCount)
+  .split(newLines)
+  .map(parseNumber)
+  .reduce(threeMeasurementSlidingWindow, [])
+  .reduce(countIncreases, initalCount)
 
 console.log('🎅 Day 1 (b): ', partTwo(input))
