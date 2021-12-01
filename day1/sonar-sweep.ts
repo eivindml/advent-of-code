@@ -32,3 +32,4 @@ export const partTwo = (input: string) => input
   .reduce(countIncreases, initalCount)
 
 console.log('🎅 Day 1 (b): ', partTwo(input))
+
