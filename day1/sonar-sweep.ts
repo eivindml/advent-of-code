@@ -1,15 +1,15 @@
-import { parseNumber, readFile, add } from '../utils'
+import { parseNumber, readFile, add, newLine } from '../utils'
 
 const input = readFile('day1/input')
-const newLines = /\r?\n/
-const countIncreases = (count: number, current: number, index: number, array: Array<number>) => count + (current > array[index - 1] ? 1 : 0)
 
 /* Part one: Count increases */
+
+const countIncreases = (count: number, current: number, index: number, array: Array<number>) => count + (current > array[index - 1] ? 1 : 0)
 
 const initalCount = 0
 
 export const partOne = (input: string) => input
-  .split(newLines)
+  .split(newLine)
   .map(parseNumber)
   .reduce(countIncreases, initalCount)
 
@@ -26,7 +26,7 @@ const nMeasurementSlidingWindow = (n: number) => (result: Array<number>, _: numb
 const threeMeasurementSlidingWindow = nMeasurementSlidingWindow(3)
 
 export const partTwo = (input: string) => input
-  .split(newLines)
+  .split(newLine)
   .map(parseNumber)
   .reduce(threeMeasurementSlidingWindow, [])
   .reduce(countIncreases, initalCount)
