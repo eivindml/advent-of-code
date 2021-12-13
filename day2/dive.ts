@@ -53,4 +53,6 @@ export const partTwo = flow(
   product
 )
 
+
+
 console.log('🎅 Day 2 (b): ', partTwo(input))
